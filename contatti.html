@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Send an e-mail</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script><!--
+        function avvio() {
+            if (!document.getElementById) {
+                return;
+            }
+            document.getElementById("indirizzo").focus();
+            var acquirente;
+            if (window.localStorage) {
+                acquirente = window.localStorage.getItem('rbAcquirente');
+            }
+            if (acquirente && acquirente == 'no') {
+                document.getElementById('acquirenteSi').checked = false;
+                document.getElementById('acquirenteNo').checked = true;
+            }
+            else {
+                document.getElementById('acquirenteSi').checked = true;
+                document.getElementById('acquirenteNo').checked = false;
+            }
+            controllaLista();
+        }
+        function controllaLista() {
+            if (!document.getElementById || !window.localStorage) {
+            return;
+            }
+            var opzioneSi = document.getElementById('acquirenteSi');
+            var opzioneNo = document.getElementById('acquirenteNo');
+            var casellaOffice = document.getElementById('office');
+            var casellaFashion = document.getElementById('fashion');
+            var casellaSport = document.getElementById('sport');
+            var casellaAltro = document.getElementById('altro');
+            if (opzioneSi.checked) {
+                casellaOffice.disabled = false;
+                casellaFashion.disabled = false;
+                casellaSport.disabled = false;
+                casellaAltro.disabled = false;
+                window.localStorage.setItem('rbAcquirente', 'si');
+            }
+            if (opzioneNo.checked) {
+                casellaOffice.disabled = true;
+                casellaFashion.disabled = true;
+                casellaSport.disabled = true;
+                casellaAltro.disabled = true;
+                window.localStorage.setItem('rbAcquirente', 'no');
+            }
+        }
+       //-->
+       </script>
+</head>
+<body onload="avvio()">
+    <form method="post" action="https://idriscloud.com/elvetico/risposta.php">
+        <label for="fname">Nome:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Cognome:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <label for="indirizzo">Indirizzo e-mail:</label>
+        <input type="email" name="indirizzo" id="indirizzo" size="70" required><br><br>
+        <label for="messaggio">Messaggio:</label>
+        <textarea name="messaggio" id="messagio" rows="4" cols="70" required></textarea><br><br>
+        <input type="submit" value="Invia"><br><br>
+   <p>Ti interessa a acquistare qualche prodotto?</p>
+   <p>
+    <input type="radio" name="acquirente" id="acquirenteSi" value="si" onchange="controlloLista()" checked>
+    <label for="acquirenteSi">Si</label><br>
+    <input type="radio" name="acquirente" id="acquirenteNo" value="no" onchange="controlloLista()">
+    <label for="acquirenteNo">No</label><br><br>
+   </p>
+   <p>Che stile ti interessa?</p>
+   <p>
+    <input type="checkbox" id="office" name="office" value="si">
+    <label for="office">Office</label><br>
+    <input type="checkbox" id="fashion" name="fashion" value="si">
+    <label for="fashion">Fashion</label><br>
+    <input type="checkbox" id="sport" name="sport" value="si">
+    <label for="sport">Sport</label><br>
+    <input type="checkbox" id="altro" name="altro" value="si">
+    <label for="altro">Altro</label><br>
+   </p>
+   </form>
+</body>
+</html>
