@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="../javascript/activeme.js"></script>
+    <script src="C:\Users\Admin\OneDrive\Desktop\test_webDesign\anagraphic-app.tsx""></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="../_style\lookpage.css">
+    <style>
+        .radio-group {
+          margin: 20px;
+        }
+        
+        .radio-item {
+          margin: 10px 0;
+        }
+        
+        input[type="radio"] {
+          margin-right: 10px;
+        }
+        </style>
+</head>
+<body>
+	<h1>Menu</h1>
+	<a href=file:///C:/Users/Admin/OneDrive/Desktop/test_webDesign/I/index.html>I</a>
+	<a href=file:///C:/Users/Admin/OneDrive/Desktop/test_webDesign/II/index.html>II</a>
+	<a href=file:///C:/Users/Admin/OneDrive/Desktop/test_webDesign/III/index.html>III</a>
+    <div class="container">
+        <h1>Welcome</h1>
+        <p>This is a sample webpage.</p>
+        <a href="../javascript/activeme.js" class="btn">Learn More</a>
+    </div>
+    <form>
+        <h3>Select your favorite color:</h3>
+        
+        <input type="radio" id="red" name="color" value="red">
+        <label for="red">Red</label>
+        
+        <input type="radio" id="blue" name="color" value="blue">
+        <label for="blue">Blue</label>
+      
+        <input type="radio" id="green" name="color" value="green">
+        <label for="green">Green</label>
+      </form>
+      <br>
+      <h3>Select your gender:</h3>
+      <form>
+        <div class="radio-group">
+          <div class="radio-item">
+            <input type="radio" id="male" name="gender" value="male" checked>
+            <label for="male">Male</label>
+          </div>
+      
+          <div class="radio-item">
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+          </div>
+      
+          <div class="radio-item">
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+          </div>
+        </div>
+      </form>
+      <br>
+      <h3>Select your choice:</h3>
+      <form>
+        <input type="radio" name="choice" required>
+        <label for="choice">Choice1</label>
+        <br>
+        <input type="radio" name="choice" required>
+        <label for="choice">Choice2</label>
+      </form>
+</body>
+</html>
