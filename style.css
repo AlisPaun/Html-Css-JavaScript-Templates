@@ -1,0 +1,148 @@
+* {
+	box-sizing: border-box; /* Added a value for box-sizing */
+	margin: 5px; /* Added a value for margin */
+	padding: 5px; /* Added a value for padding */
+}
+body {
+	background-color: DarkSeaGreen; /* Added a value for background-color */
+}
+h1 {
+	color: rgb(20, 178, 70);
+	font-family: Arial, sans-serif; /* Added a font-family */
+	font-display: swap; /* Added a value for font-display */
+	position: static;
+	text-align: center; /* Added a value for text-align */
+	padding-right: 50px; /* Added a value for padding-right */
+	padding-left: 0; /* Added a value for padding-left */
+	animation-timing-function: ease-in-out;
+}
+header {
+	background-color: DarkOliveGreen; /* Added a value for background-color */
+	color: rgb(162, 159, 69); /* Added a value for color */
+	font-size: 16px; /* Added a value for font-size */
+	font-family: Arial, sans-serif; /* Added a font-family */
+	margin: 0; /* Added a value for margin */
+	padding: 15px;; /* Added a value for padding */
+	border: 1px solid rgb(30, 29, 26); /* Added a value for border */
+	border-radius: 25px; /* Added a value for border-radius */
+	text-align: center; /* Added a value for text-align */
+}
+nav {
+	background-color: transparent; /* Added a value for background-color */
+	text-align: center; /* Added a value for text-align */
+}
+section.introduction {
+	background-color: rgb(205, 219, 181); /* Added a value for background-color */
+	margin: 0; /* Added a value for margin */
+	padding: 15px; /* Added a value for padding */
+}
+section {
+	display: inline-table; /* Added a value for display */
+	float: left;
+	background-color: rgb(93, 136, 20); /* Added a value for background-color */
+	margin: 0; /* Added a value for margin */
+	padding: 15px; /* Added a value for padding */
+	border: 1px solid rgb(30, 29, 26); /* Added a value for border */
+	border-radius: 25px; /* Added a value for border-radius */
+}
+img {
+	float: none; /* Added a value for float */
+	display: block; /* Added a value for display */
+	max-width: 50%; /* Added a value for max-width */
+	width: 350%; /* Added a value for width */
+	height: auto; /* Added a value for height */
+	border-radius: 25px; /* Added a value for border-radius */
+
+}
+img:hover {
+	opacity: 0.8; /* Added a value for opacity */
+	transition: opacity 0.5s; /* Added a value for transition */
+	transform: scale(1.05); /* Added a value for transform */
+	transition: transform 0.9s; /* Added a value for transition */
+	animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+aside {
+	margin: 15px; /* Added a value for margin */
+	padding: 15px;
+	background-color: rgb(113, 223, 201); /* Added a value for background-color */
+	border: 1x solid rgb(30, 29, 26); /* Added a value for border */
+	border-radius: 25px; /* Added a value for border-radius */
+}
+article {
+	margin: 15px; /* Added a value for margin */
+	padding: 15px;
+	background-color: rgb(35, 93, 87); /* Added a value for background-color */
+	border: 1px solid rgb(30, 29, 26); /* Added a value for border */
+	border-radius: 25px; /* Added a value for border-radius */
+}
+
+footer {
+	position: relative;
+}
+ul {
+	list-style-type: none; /* Added a value for list-style-type */
+	color: #eaede7;
+	margin: 0; /* Added a value for margin */
+	padding: 0; /* Added a value for padding */
+}
+hr {
+	display: block; /* Added a value for display */
+	width: 100%; /* Added a value for width */
+	border-style: solid; /* Added a value for border-style */
+	border-width: 0 0 5px 0; /* Added a value for border-width */
+	border-color: rgb(53, 181, 111); /* Added a value for border-color */
+}
+h2, h3, h4, h5, h6 {
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Added a font-family */ /* Added a font-family */
+	font-size: 16px; /* Added a value for font-size */
+	color: rgb(153, 148, 11); /* Added a value for color */
+	text-align: center; /* Added a value for text-align */
+	line-height: 1.5; /* Added a value for line-height */
+	letter-spacing: 0.5px; /* Added a value for letter-spacing */
+	text-transform: uppercase; /* Added a value for text-transform */
+	text-decoration: none; /* Added a value for text-decoration */
+}
+p {
+	font-family: Verdana, sans-serif; /* Added a font-family */
+	font-size: 16px; /* Added a value for font-size */
+	color: rgb(234, 228, 228); /* Added a value for color */
+	text-align: ; /* Added a value for text-align */
+	line-height: 1.5; /* Added a value for line-height */
+}
+
+.a {
+	color: blue; /* Added a value for color */
+	text-decoration: none; /* Added a value for text-decoration */
+	font-weight: bold; /* Added a value for font-weight */
+	font-size: 18px; /* Added a value for font-size */
+	text-transform: uppercase; /* Added a value for text-transform */
+	transition: color 0.3s; /* Added a value for transition */
+}
+.a:hover {
+	color: red; /* Added a value for color */
+	text-decoration: underline; /* Added a value for text-decoration */
+}
+.a:active {
+	color: green; /* Added a value for color */
+	text-decoration: none; /* Added a value for text-decoration */
+}
+.a:visited {
+	color: purple; /* Added a value for color */
+	text-decoration: none; /* Added a value for text-decoration */
+}
+
+img {
+	float: none; /* Added a value for float */
+	display: block; /* Added a value for display */
+	max-width: 50%; /* Added a value for max-width */
+	height: auto; /* Added a value for height */
+	border-radius: 25px; /* Added a value for border-radius */
+}
+
+.img:hover {
+	opacity: 0.8; /* Added a value for opacity */
+	transition: opacity 0.3s; /* Added a value for transition */
+	transform: scale(1.05); /* Added a value for transform */
+	transition: transform 0.9s; /* Added a value for transition */
+	animation: name duration timing-function delay iteration-count direction fill-mode;
+}
