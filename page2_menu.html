@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Full Stack Developer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <style type="text/css">
+    canvas {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        border: 1px solid black;
+        
+    }
+    body {
+        margin: 0;
+        
+    }
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        
+        
+        var clicked = true;
+        var triangle = [];
+        var pentagon = [];
+        
+        //Function to draw a triangle
+        
+        function drawTriangle(ctx, x1, y1, x2, y2, x3, y3, fillColor, strokeColor) {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.lineTo(x3, y3);
+            ctx.closePath();
+            ctx.fillStyle = 'rgb(0, 0, 255)';
+            ctx.fill();
+            ctx.strokeStyle = 'dark blue';
+            ctx.stroke();
+            triangle.push(x1, y1, x2, y2, x3, y3);
+        }
+        function drawPentagon(ctx, x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, fillColor, strokeColor) {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.lineTo(x3, y3);
+            ctx.lineTo(x4, y4);
+            ctx.lineTo(x5, y5);
+            ctx.closePath();
+            ctx.fillStyle = "light blue";
+            ctx.fill();
+            ctx.strokeStyle = 'dark blue';
+            ctx.stroke();
+            pentagon.push(x1, y1, x2, y2, x3, y3, x4, y4, x5, y5);
+        }
+        // Function to check if a point is inside a triangle
+        function isPointInTriangle(px, py, x1, y1, x2, y2, x3, y3) {
+            var area = 0.5 * (-y2 * x3 + y1 * (-x2 + x3) + x1 * (y2 - y3) + x2 * y3);
+            var s = 1 / (2 * area) * (y1 * x3 - x1 * y3 + (y3 - y1) * px + (x1 - x3) * py);
+            var t = 1 / (2 * area) * (x1 * y2 - y1 * x2 + (y1 - y2) * px + (x2 - x1) * py);
+            return s > 0 && t > 0 && (1 - s - t) > 0;
+        }
+        function isPointInPentagon(px, py, x1, y1, x2, y2, x3, y3, x4, y4, x5, y5) {
+            var area = 0.5 * (-y2 * x3 + y1 * (-x2 + x3) + x1 * (y2 - y3) + x2 * y3 + x3 * y4 + x4 * y5 + x5 * y1 + x1 * y5);
+            var s = 1 / (2 * area) * (y1 * x3 - x1 * y3 + (y3 - y1) * px + (x1 - x3) * py + (x3 - x1) * py);
+            var t = 1 / (2 * area) * (x1 * y2 - y1 * x2 + (y1 - y2) * px + (x2 - x1) * py + (y2 - y1) * px);
+            return s > 0 && t > 0 && (1 - s - t) > 0;
+        }
+        // Draw multiple triangles
+        drawTriangle(ctx, 650, 0, 470, 400, 650, 290, "transparent", "#000000");// 1 Red triangle
+        drawTriangle(ctx, 650, 0, 650, 290, 850, 400, "#transparent", "#000000"); // 2 Green triangle
+        
+        drawTriangle(ctx, 650, 290, 600, 400, 470, 400, "#transparent", "#000000"); // 3 Blue triangle
+        drawTriangle(ctx, 650, 290, 700, 400, 850, 400, "#transparent", "#000000");// 4 Yellow triangle
+        
+        drawTriangle(ctx, 650, 290, 600, 400, 650, 400, "#transparent", "#000000");//5 azure sinistra little triangle
+        drawTriangle(ctx, 650, 290, 650, 400, 700, 400, "#transparent", "#000000");//6 azure destra little triangle
+        
+        drawTriangle(ctx, 470, 400, 500, 650, 320, 800, "#transparent", "#000000"); //pink long triangle sinistra
+        drawTriangle(ctx, 850, 400, 820, 650, 1050, 800, "#transparent", "#000000");//albastru celeste long triangle
+        
+        drawTriangle(ctx, 470, 401, 600, 400, 552, 520, "#transparent", "#000000");//sinistra
+        drawTriangle(ctx, 470, 400, 500, 650, 552, 520, "#transparent", "#000000");//sinistra
+        
+        drawTriangle(ctx, 700, 400, 850, 400, 760, 520, "#transparent", "#000000");//destre grande
+        drawTriangle(ctx, 850, 400, 820, 650, 760, 520, "#transparent", "#000000");//destra base
+        
+        drawPentagon(ctx, 650, 400, 600, 400, 552, 520, 580, 580, 650, 520, "#transparent", "#000000");
+        drawPentagon(ctx, 650, 400, 700, 400, 760, 520, 730, 580, 650, 520, "#transparent", "#000000");
+        
+        
+        
+        canvas.addEventListener("click", function(event) {
+            var rect = canvas.getBoundingClientRect();
+            var x = event.clientX - rect.left;
+            var y = event.clientY - rect.top;
+        
+            for (var i = 0; i < triangle.length; i += 6) {
+                if (isPointInTriangle(ctx, 650, 0, 465, 400, 650, 290, "transparent", "#000000")) {
+                    window.location.href = "../history.html" + clicked;
+                }
+            }
+            for (var i = 0; i < pentagon.length; i += 10) {
+                if(isPointInTriangle(ctx, 650, 0, 650, 290, 875, 400)){
+                    window.location.href = "../vision.html" + clicked;
+                }
+            }
+        });
+    </script>
+</style>
+</head>
+<body style=background:url("AdobeStock_293215482.jpeg")>
+
+    <i class="fa fa-bars" aria-hidden="true"></i>
+    <i class="fa fa-times" aria-hidden="true"></i>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Menu</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNav"></div>
+
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home</li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">My history</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">My skills</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Portfolio</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h2 style="display: flex; color:rgb(208, 34, 104)">My name is Alis Paun and I am Junior Full Stack Developer.</h2>
+    </main>
+    <section>
+        
+</body>
+</html>
